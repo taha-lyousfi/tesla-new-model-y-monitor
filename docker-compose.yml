@@ -1,0 +1,15 @@
+services:
+  tesla-monitor:
+    build: .
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+      - ./output:/app/output
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"

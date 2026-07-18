@@ -1,0 +1,26 @@
+{
+  "name": "tesla-new-model-y-monitor",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Monitor Tesla France new Model Y inventory and email new-car alerts.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/index.js --watch",
+    "setup": "node src/setup.js",
+    "once": "node src/index.js --once",
+    "dry-run": "node src/index.js --dry-run",
+    "smoke:watch": "node src/index.js --watch --dry-run --max-runs=1",
+    "test": "node --test",
+    "check": "node --check src/*.js && node --test",
+    "install-browser": "playwright install chrome"
+  },
+  "dependencies": {
+    "dotenv": "17.4.2",
+    "nodemailer": "9.0.3",
+    "playwright": "1.61.1",
+    "undici": "^7.28.0"
+  }
+}
